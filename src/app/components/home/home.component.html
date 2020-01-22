@@ -6,7 +6,7 @@
 
   
     <div class="row">
-        <div *ngFor="let trend of allTrending" class="col-md-2 my-2">
+        <div *ngFor="let trend of allTrending|search:terms " class="col-md-2 my-2">
             
             <div class="card" (click)=getMediaType(trend.media_type,trend.id)>
                 <div class="card-body">
