@@ -1,23 +1,19 @@
-import { Router } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
 import { MoviesService } from './../../services/movies.service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-movies',
+  templateUrl: './movies.component.html',
+  styleUrls: ['./movies.component.css']
 })
-export class HomeComponent implements OnInit {
+export class MoviesComponent implements OnInit {
 
   pages: number[] = [1, 2, 3, 4, 5, 6, 7, 8];
 
   pageNumber = 1;
 
   allTrending: any;
-
-
-// For Search
-terms: string;
 
 
   imgPrefix = 'https://image.tmdb.org/t/p/w500/';
@@ -27,20 +23,27 @@ terms: string;
     this.movies.getAllTrending(this.pageNumber).subscribe( data => {
       this.allTrending = data.results;
 
+      // for(const trand of this.allTrending) {
+
+      //   if (type === 'movie')
+
+      // }
+
     });
   }
 
+
+
+
   getMediaType(type: string, id: number) {
 
-      if (type === 'movie') {
-        this.router.navigate(['/movie/' + id]);
+    if (type === 'movie') {
+      this.router.navigate(['/movie/' + id]);
 
-      } else {
-        this.router.navigate(['/tv/' + id]);
-      }
-  }
-
-
+    } else {
+      this.router.navigate(['/tv/' + id]);
+    }
+}
 
 
   pagination(num: number) {

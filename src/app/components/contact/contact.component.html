@@ -1,0 +1,18 @@
+<div class="container">
+
+    <form [formGroup]="contactForm" (ngSubmit)="saveForm()">
+      <label for="">user name</label>
+      <input type="text" formControlName="userName" class="form-control" placeholder="Username" required >
+      <div *ngIf="contactForm.controls.userName.touched && contactForm.controls.userName.errors != null" 
+      class="alert alert-danger">Minimum length is 4 digi</div>
+      <label for="">user Email</label>
+      <input type="text" formControlName="userMail" class="form-control" placeholder="Username" required >
+      <div *ngIf="contactForm.controls.userMail.touched && contactForm.controls.userMail.errors != null" 
+      class="alert alert-danger">Enter a valid mail</div>
+      <label for="">subject</label>
+      <input type="text" formControlName="subject" class="form-control" placeholder="Subject" >
+      <button [disabled]='contactForm.invalid' type='submit' class="btn btn-info mt-2">Send</button>
+    </form>
+</div>
+
+

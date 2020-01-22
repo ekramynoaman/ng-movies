@@ -7,44 +7,43 @@
         <div class="col-md-7">
             <div class="card p-2">
                 <div class="card-title  d-flex justify-content-between pb-0 pr-0 flex-wrap">
-                    <div class="movie-title text-left">
-                        <h4 class="mb-0">{{ movie.title == undefined ? movie.name:movie.title }}
+                    <div class="tv-title text-left">
+                        <h4 class="mb-0">{{ tv.title == undefined ? tv.name:tv.title }}
                         </h4>
-                        <p class="movie-tag">{{ movie.tagline }}</p>
                     </div>
 
                     <div class="rating text-right">
                         <i class="fas fa-star fa-2x rating-icon "></i>
-                        <p class="card-text rating-ave">{{ movie.vote_average }}
+                        <p class="card-text rating-ave">{{ tv.vote_average }}
                         <span class="rating-span text-muted">/10</span></p>
                         <p class="rating-it"><i class="far fa-star fa-2x rating-it-icon"></i>
                         Rate it</p>
 
-                        <div class="adults" *ngIf="movie.adult">
+                        <div class="adults" *ngIf="tv.adult">
                             <i class="far fa-eye-slash"></i>+18
                         </div>
                     </div>
 
 
                 </div>
-                <div class="d-flex movie-info">
-                    <p class="card-text">{{ movie.original_language | uppercase }}</p>
+                <div class="d-flex tv-info">
+                    <p class="card-text">{{ tv.original_language | uppercase }}</p>
                     <div class="d-flex">
-                        <p class="movie-type" *ngFor="let genre of movie.genres">
+                        <p class="tv-type" *ngFor="let genre of tv.genres">
                             {{ genre.name }} </p>
                     </div>
-                    <p class="card-text">{{ movie.release_date | date:'y' }}</p>
+                    <p class="card-text">{{ tv.release_date | date:'y' }}</p>
                 </div>
                    
             
                 
-                <p class="card-text p-1 mt-2 text-justify">{{ movie.overview }}</p>
+                <p class="card-text p-1 mt-2 text-justify">{{ tv.overview }}</p>
 
                 
                 <div class="d-flex flex-wrap justify-content-center w-100 " >
-                    <ng-container *ngFor="let product of movie.production_companies">
+                    <ng-container *ngFor="let network of tv.networks">
                         <img class="img-fluid company-logo"  
-                        *ngIf="product.logo_path != null" [src]="imgPrefix+product.logo_path" alt="">
+                        *ngIf="network.logo_path != null" [src]="imgPrefix+network.logo_path" alt="">
                     </ng-container>
                 </div>
 
@@ -53,11 +52,11 @@
 
         <div class="col-md-5">
 
-            <img [src]="imgPrefix+movie.poster_path" 
-            [alt]="movie.title" class="img-fluid w-75 poster"><br>
+            <img [src]="imgPrefix+tv.poster_path" 
+            [alt]="tv.title" class="img-fluid w-75 poster"><br>
 
-            <a [href]="movie.homepage" target="blank" class="card-text">
-                {{movie.title == undefined ? movie.name:movie.title}} </a>
+            <a [href]="tv.homepage" target="blank" class="card-text">
+                {{tv.title == undefined ? tv.name:tv.title}} </a>
 
         </div>
 

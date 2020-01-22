@@ -1,14 +1,10 @@
 <div class="container text-light mt-3">
 
-  <div class="py-5">
-    <input [(ngModel)]="terms" type="text" class="form-control w-50 m-auto" placeholder="Find Your Movies">
-  </div>
-
   
     <div class="row">
-        <div *ngFor="let trend of allTrending" class="col-md-2 my-2">
+        <div *ngFor="let trend of allTrending" class="col-md-3 my-2" [ngClass]="{'d-none' :trend.media_type != 'movie'}">
             
-            <div class="card" (click)=getMediaType(trend.media_type,trend.id)>
+            <div class="card"  (click)=getMediaType(trend.media_type,trend.id)>
                 <div class="card-body">
                     <img [src]="imgPrefix+trend.poster_path" [alt]="trend.title" 
                     class="img-fluid">

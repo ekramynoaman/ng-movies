@@ -9,7 +9,7 @@
     margin-bottom: 0; 
 }
 
-.movie-tag {
+.tv-tag {
     font-size: smaller;
     font-weight: lighter;
     margin-bottom: 0; 
@@ -46,10 +46,10 @@
     
 }
 
-.movie-info {
+.tv-info {
     position: relative;
 }
-.movie-info *{
+.tv-info *{
 
     color: gray;
     font-size: 0.8rem;

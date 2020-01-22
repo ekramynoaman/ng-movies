@@ -3,25 +3,23 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-movie',
-  templateUrl: './movie.component.html',
-  styleUrls: ['./movie.component.css']
+  selector: 'app-tv',
+  templateUrl: './tv.component.html',
+  styleUrls: ['./tv.component.css']
 })
+export class TvComponent implements OnInit {
 
+  tvIndex;
 
-export class MovieComponent implements OnInit {
-
-  movieIndex;
-
-  movie: any = {};
+  tv: any = {};
 
   imgPrefix = 'https://image.tmdb.org/t/p/w500/';
 
   constructor(private route: ActivatedRoute, private movieService: MoviesService) {
-    this.movieIndex = this.route.snapshot.paramMap.get('id');
-    this.movieService.getMovieById(this.movieIndex).subscribe( (data) => {
+    this.tvIndex = this.route.snapshot.paramMap.get('id');
+    this.movieService.getTvById(this.tvIndex).subscribe( (data) => {
 
-      this.movie = data;
+      this.tv = data;
     });
    }
 
