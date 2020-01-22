@@ -21,7 +21,7 @@
 }
 
 .card-body:hover .card-desc {
-    top: 0;
+    top: 50%;
 }
 
 .card-body:hover img {

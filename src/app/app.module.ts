@@ -12,7 +12,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ContactComponent } from './components/contact/contact.component';
 import { TvComponent } from './components/tv/tv.component';
-import { PeopleComponent } from './components/people/people.component';
 import { AboutComponent } from './components/about/about.component';
 import { TvsComponent } from './components/tvs/tvs.component';
 import { MoviesComponent } from './components/movies/movies.component';
@@ -30,7 +29,6 @@ import { SearchPipe } from './pipes/search.pipe';
     NavbarComponent,
     ContactComponent,
     TvComponent,
-    PeopleComponent,
     AboutComponent,
     TvsComponent,
     MoviesComponent,
